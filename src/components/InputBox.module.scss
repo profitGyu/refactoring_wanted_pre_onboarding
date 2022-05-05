@@ -1,0 +1,11 @@
+@use '/src/styles/constants/colors';
+.inputbox {
+  display: flex;
+
+  justify-content: center;
+  width: 35%;
+  margin-bottom: 2px;
+  padding: 15px;
+  background: colors.$WHITE;
+  border-radius: 5px;
+}

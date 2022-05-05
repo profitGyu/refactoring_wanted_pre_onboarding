@@ -1,0 +1,53 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.tab {
+  width: 800px;
+  margin-bottom: 50px;
+  h1 {
+    display: block;
+    color: colors.$BIG_TITLE;
+    font-weight: 600;
+    font-size: 32px;
+  }
+}
+
+.tabWrap {
+  position: relative;
+  background: colors.$WHITE;
+  ul {
+    @include flexbox.flexbox(around, center);
+    height: 50px;
+    line-height: 50px;
+
+    li {
+      flex: 1;
+      color: colors.$GRAYA;
+      text-align: center;
+    }
+    a {
+      all: unset;
+    }
+    a:hover {
+      cursor: pointer;
+    }
+    a:link,
+    a:active,
+    a:focus {
+      color: colors.$BLACK;
+      font-weight: 1000;
+    }
+  }
+
+  span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: colors.$GREEN;
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+  }
+}

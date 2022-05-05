@@ -1,0 +1,12 @@
+{
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+
+  // 이 설정은 prettier 비활성화합니다, 여기까지 하면 eslint와 prettier 충돌을 해결할 수 있습니다
+  // 아마 전역 세팅에서 defaultFormatter가 prettier로 설정되어 있을 거예요
+  // 정확히는 defaultFormatter인 prettier을 비활성화하는 옵션입니다
+  "editor.formatOnSave": false,
+  
+  // css 파일만 prettier로 인한 포맷팅 허용
+  "[css]": { "editor.formatOnSave": true },
+  "[scss]": { "editor.formatOnSave": true }
+}
