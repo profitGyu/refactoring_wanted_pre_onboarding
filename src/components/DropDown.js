@@ -31,11 +31,7 @@ function DropDown() {
 
     li.forEach((i, index) => {
       const textValue = li[index].textContent || li[index].innerHTML
-      if (textValue.toUpperCase().indexOf(filter) > -1) {
-        li[index].style.display = ''
-      } else {
-        li[index].style.display = 'none'
-      }
+      textValue.toUpperCase().includes(filter)?li[index].style.display = '' :  li[index].style.display = 'none'
     })
   }
 

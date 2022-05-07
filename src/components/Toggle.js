@@ -12,15 +12,14 @@ function Toggle() {
     <div className={styles.toggleContainer}>
       <h1>Toggle</h1>
       <div className={styles.toggleWarpper}>
-        <div>몰</div>
-        <div>루?</div>
-        <button
-          className={styles.toggleButton}
-          type='button'
-          onClick={onClickHandle}
-          style={isClick ? { left: 0 } : { left: '50%' }}
-        >
-          {isClick ? ' 몰 ' : ' 루?'}
+        <button className={styles.underButton} onClick={onClickHandle} type='button' style={isClick?{color:"#000000"}:{color:"#eeeeee"}}>
+          몰
+        </button>
+        <button className={styles.underButton} onClick={onClickHandle} type='button' style={!isClick?{color:"#000000"}:{color:"#eeeeee"}}>
+          루?
+        </button>
+        <button className={styles.toggleButton} type='button' style={isClick ? { left: 0 } : { left: '50%' }}>
+          {` `}
         </button>
       </div>
     </div>

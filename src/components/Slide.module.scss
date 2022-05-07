@@ -1,4 +1,57 @@
 @use '/src/styles/constants/colors';
 
-.SlideContainer {
+.slideContainer {
+  h1 {
+    color: colors.$BIG_TITLE;
+    font-weight: 600;
+    font-size: 32px;
+  }
+
+  .slideWarpper {
+    position: relative;
+    width: 50%;
+
+    ul {
+      display: flex;
+      margin-top: 3px;
+
+      li {
+        flex: 1;
+
+        button {
+          width: 30px;
+          font-size: 8px;
+          background: colors.$WHITE;
+          border-radius: 25px;
+        }
+      }
+    }
+
+    input[type='range'] {
+      width: 85%;
+      height: 5px;
+      overflow: hidden;
+      background-color: colors.$GRAYD;
+      border-radius: 25px;
+      -webkit-appearance: none;
+
+      &::-webkit-slider-runnable-track {
+        height: 5px;
+        margin-top: -1px;
+        color: #13bba4;
+        border-radius: 25px;
+        -webkit-appearance: none;
+      }
+
+      &::-webkit-slider-thumb {
+        width: 5px;
+        height: 5px;
+        background: #434343;
+        border-radius: 25px;
+        box-shadow: -100vw 0 0 100vw #434343;
+        cursor: pointer;
+        -webkit-appearance: none;
+      }
+    }
+  }
 }

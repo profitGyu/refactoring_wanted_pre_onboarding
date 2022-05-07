@@ -1,4 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye } from '@fortawesome/free-solid-svg-icons'
+
 import '../assets/fontAwesome/index'
 import styles from './InputBox.module.scss'
 import PropTypes from 'prop-types'
@@ -11,7 +13,7 @@ function InputBox({ type, readonlyType, fontawesomeIcon, placeholder, onClick, i
       ) : (
         <input placeholder={placeholder} type={type}  readOnly={readonlyType} onChange={onChange} />
       )}
-      <FontAwesomeIcon icon={fontawesomeIcon} onClick={onClick} className={styles.fontAwesome} />
+      {fontawesomeIcon && <FontAwesomeIcon icon={fontawesomeIcon} onClick={onClick} className={styles.fontAwesome} />}
     </div>
   )
 }
@@ -23,9 +25,9 @@ InputBox.defaultProps = {
 
 InputBox.propTypes = {
   type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
   readonlyType: PropTypes.bool,
   fontawesomeIcon: PropTypes.string,
-  placeholder: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   isDisplay: PropTypes.bool,
   text: PropTypes.string,
