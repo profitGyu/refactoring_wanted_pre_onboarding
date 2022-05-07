@@ -1,11 +1,16 @@
 @use '/src/styles/constants/colors';
+
 .inputbox {
   display: flex;
-
   justify-content: center;
-  width: 35%;
-  margin-bottom: 2px;
+  width: 280px;
   padding: 15px;
+  margin-bottom: 2px;
   background: colors.$WHITE;
+  border: solid 0.3px colors.$GRAYA;
   border-radius: 5px;
+}
+
+.fontAwesome:hover {
+  cursor: pointer;
 }

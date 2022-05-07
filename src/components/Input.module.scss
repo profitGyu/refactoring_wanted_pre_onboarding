@@ -1,0 +1,10 @@
+@use '/src/styles/constants/colors';
+
+.input_container {
+  h1 {
+    display: block;
+    color: colors.$BIG_TITLE;
+    font-weight: 600;
+    font-size: 32px;
+  }
+}

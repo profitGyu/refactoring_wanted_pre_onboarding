@@ -4,10 +4,22 @@
 @use '/src/styles/mixins/position';
 
 .dropDown {
+  margin-bottom: 50px;
   h1 {
     display: block;
     color: colors.$BIG_TITLE;
     font-weight: 600;
     font-size: 32px;
+  }
+}
+
+.coin__container {
+  li {
+    width: 35%;
+    padding: 15px;
+    background: colors.$WHITE;
+  }
+  li:hover {
+    background: colors.$BLUE;
   }
 }
