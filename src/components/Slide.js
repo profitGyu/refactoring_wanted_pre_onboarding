@@ -15,11 +15,11 @@ function Slide() {
     <div className={styles.slideContainer}>
       <h1>Slide</h1>
       <div className={styles.slideWarpper}>
-        <InputBox placeholder='퍼샌트' type='text' text={value} />
+        <InputBox placeholder='%' type='text' text={value} />
         <input type='range' min='1' max='100' className={styles.rangeInput} value={value} onChange={OnClickHandle} />
         <ul>
-          {FIVESECTION.map((item) => (
-            <li>
+          {FIVESECTION.map((item, index) => (
+            <li key={`slide-${index}`}>
               <button type='button' onClick={OnClickHandle} value={item}>
                 {item}%
               </button>

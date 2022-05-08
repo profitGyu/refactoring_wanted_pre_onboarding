@@ -2,6 +2,7 @@ import styles from './DropDown.module.scss'
 import '../assets/fontAwesome/index'
 import InputBox from './InputBox'
 import { useEffect, useRef, useState } from 'react'
+import cx from 'classnames'
 
 function DropDown() {
   const [isDisplay, setIsDisplay] = useState(false)
@@ -31,8 +32,14 @@ function DropDown() {
 
     li.forEach((i, index) => {
       const textValue = li[index].textContent || li[index].innerHTML
-      textValue.toUpperCase().includes(filter)?li[index].style.display = '' :  li[index].style.display = 'none'
+      textValue.toUpperCase().includes(filter) ? (li[index].style.display = '') : (li[index].style.display = 'none')
     })
+  }
+
+  const refOutSection = (e) => {
+    if (coinUl.current === e.target) {
+      setIsDisplay(false)
+    }
   }
 
   useEffect(() => {
@@ -50,6 +57,7 @@ function DropDown() {
             fontawesomeIcon='fa-solid fa-caret-down'
             onClick={onClickHandle}
             text={selectedCoin}
+            readonlyType
           />
           <InputBox
             type='text'
@@ -59,12 +67,15 @@ function DropDown() {
             isDisplay={isDisplay}
             onChange={filterDropDown}
           />
-          <ul className={styles.coin__container} ref={coinUl} style={isDisplay ? { display: '' } : { display: 'none' }}>
+          <ul
+            className={cx({ [styles.coinContainer]: isDisplay }, { [styles.coinContainerNone]: !isDisplay })}
+            ref={coinUl}
+            onClick={refOutSection}
+            role='menu'
+          >
             {coins.slice(0, 10).map((item) => (
-              <li key={item.id}>
-                <button type='button' onClick={coinClickHandl}>
-                  {item.name}
-                </button>
+              <li key={item.id} onClick={coinClickHandl} role="row">
+                {item.name}
               </li>
             ))}
           </ul>

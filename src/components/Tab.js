@@ -18,27 +18,31 @@ const TABLIST = [
 
 export default function Tab() {
   const underLine = useRef(null)
-  const [isCheck, setIsCheck] = useState()
-  function clickHandle(e) {
-    underLine.current.style = `left:${e.currentTarget.parentNode.offsetLeft}px; width:${e.currentTarget.parentNode.offsetWidth}px`
+  const [focusId, setFocusId] = useState('감자_1')
+  function clickHandle(e, id) {
+    underLine.current.style = `left:${e.currentTarget.offsetLeft}px; width:${e.currentTarget.offsetWidth}px`
+    setFocusId(id)
   }
 
   return (
     <div className={styles.tab}>
       <h1>Tab</h1>
       <div className={styles.tabWrap}>
-        <ul>
+        <ul role='menu'>
           {TABLIST.map((item) => {
             return (
-              <li key={item.id}>
-                <a onClick={clickHandle} href='#foo' style={{}}>
-                  {item.title}
-                </a>
+              <li
+                role='row'
+                key={item.id}
+                onClick={(e) => clickHandle(e, item.id)}
+                className={focusId === item.id ? styles.focusing : styles.notFocusing}
+              >
+                {item.title}
               </li>
             )
           })}
         </ul>
-        <span ref={underLine}> </span>
+        <span ref={underLine} className={styles.underLine}> </span>
       </div>
     </div>
   )

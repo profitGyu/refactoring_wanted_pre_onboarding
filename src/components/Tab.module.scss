@@ -6,6 +6,7 @@
 .tab {
   width: 800px;
   margin-bottom: 50px;
+
   h1 {
     display: block;
     color: colors.$BIG_TITLE;
@@ -17,6 +18,7 @@
 .tabWrap {
   position: relative;
   background: colors.$WHITE;
+
   ul {
     @include flexbox.flexbox(around, center);
     height: 50px;
@@ -27,24 +29,26 @@
       color: colors.$GRAYA;
       text-align: center;
     }
-    a {
-      all: unset;
-    }
-    a:hover {
+
+    li:hover {
       cursor: pointer;
     }
-    a:link,
-    a:active,
-    a:focus {
-      color: colors.$BLACK;
+
+    .focusing {
       font-weight: 1000;
+      color: colors.$BLACK;
+    }
+
+    .notFocusing {
+      color: colors.$GRAYA;
     }
   }
 
-  span {
+  .underLine {
     position: absolute;
     bottom: 0;
     left: 0;
+    width: 267px;
     height: 3px;
     background: colors.$GREEN;
     opacity: 1;

@@ -5,6 +5,7 @@
 
 .dropDown {
   margin-bottom: 50px;
+
   h1 {
     display: block;
     color: colors.$BIG_TITLE;
@@ -13,13 +14,19 @@
   }
 }
 
-.coin__container {
+.coinContainer {
   li {
     width: 35%;
     padding: 15px;
     background: colors.$WHITE;
   }
+
   li:hover {
+    cursor: pointer;
     background: colors.$BLUE;
   }
+}
+
+.coinContainerNone {
+  display: none;
 }
