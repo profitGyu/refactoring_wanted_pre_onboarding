@@ -9,9 +9,9 @@ function InputBox({ type, readonlyType, fontawesomeIcon, placeholder, onClick, i
   return (
     <div className={styles.inputbox} style={isDisplay ? { display: 'flex' } : { display: 'none' }}>
       {readonlyType ? (
-        <input placeholder={placeholder} type={type} value={text || ''} readOnly />
+        <input placeholder={placeholder} type={type} defaultValue={text || ''} readOnly />
       ) : (
-        <input placeholder={placeholder} type={type} onChange={onChange} value={text || ''}/>
+        <input placeholder={placeholder} type={type} onChange={onChange} defaultValue={text || ''}/>
       )}
       {fontawesomeIcon && (
         <FontAwesomeIcon

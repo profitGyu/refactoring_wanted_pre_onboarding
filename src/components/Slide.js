@@ -7,7 +7,7 @@ const FIVESECTION = [1, 25, 50, 75, 100]
 function Slide() {
   const [value, setValue] = useState('1')
 
-  function OnClickHandle(e) {
+  const OnClickHandle = (e) => {
     setValue(e.currentTarget.value)
   }
 
@@ -15,7 +15,9 @@ function Slide() {
     <div className={styles.slideContainer}>
       <h1>Slide</h1>
       <div className={styles.slideWarpper}>
-        <InputBox placeholder='%' type='text' text={value} />
+        <div className={styles.resultBox}>
+        <input type='text' value={value} onChange={OnClickHandle} />
+        </div>
         <input type='range' min='1' max='100' className={styles.rangeInput} value={value} onChange={OnClickHandle} />
         <ul>
           {FIVESECTION.map((item, index) => (
